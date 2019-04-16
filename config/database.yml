@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: test123
+  host: <%= ENV['DATABASE_HOST'] || 'localhost' %>
+  port: <%= ENV['DATABASE_PORT'] || '5432' %>
+
+development:
+  <<: *default
+  database: airlineapp_development
+
+staging:
+  <<: *default
+  database: airlineapp_staging
+
+production:
+  <<: *default
+  database: airlineapp_production
+
+test:
+  <<: *default
+  database: airlineapp_test

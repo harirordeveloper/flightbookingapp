@@ -1,0 +1,45 @@
+<%= link_to 'Add Flight', new_flight_path %>
+<div class="flight-engine">
+ <div class="container">
+    <div class="tabing">
+       <div class="tab-content">
+        <%= form_tag flights_path, method: :get do |f| %>
+          <div id="1" class="tab1 active">
+             <div class="flight-tab row">
+                <div class="persent-one">
+                   <i class="fa fa-map-marker" aria-hidden="true"></i>
+                   <%= text_field_tag :origin, params[:origin], placeholder: "From City or airport", class: "textboxstyle"%>
+                </div>
+                <div class="persent-one">
+                   <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <%= text_field_tag :destination, params[:destination], placeholder: "To City or airport", class: "textboxstyle"%>
+                </div>
+                <div class="persent-one less-per">
+                   <i class="fa fa-calendar" aria-hidden="true"></i>
+                   <%= text_field_tag :dep_date, params[:dep_date], data:{ provide: :datepicker }, placeholder: 'DD-MM-YYYY', class: "datepicker" %>
+                   <%#= text_field_tag :dep_date, params[:dep_date], placeholder: "Departure Date", class: "textboxstyle"%>
+                </div>
+                <div class="persent-one less-per">
+                   <i class="fa fa-calendar" aria-hidden="true"></i>
+                   <%= text_field_tag :return_date, params[:return_date], data:{ provide: :datepicker }, placeholder: 'DD-MM-YYYY', class: "datepicker" %>
+                   <%#= text_field_tag :return_date, params[:return_date], placeholder: "Return date", class: "textboxstyle"%>
+                </div>
+                <div class="persent-one">
+                   <i class="fa fa-user" aria-hidden="true"></i>
+                   <%= text_field_tag :no_of_passengers, params[:no_of_passengers], placeholder: "No of Passengers", class: "textboxstyle"%>
+                </div>
+                <div class="persent-one less-btn">
+                  <%= submit_tag "search", class: 'cst-btn' %>
+                </div>
+             </div>
+             <!-- flight tab -->
+          </div>
+        <% end %>
+         <!-- tab 1 -->
+       </div>
+       </div>
+       <!-- tab content -->
+    </div>
+    <!-- tabbing -->
+ </div>
+</div>
